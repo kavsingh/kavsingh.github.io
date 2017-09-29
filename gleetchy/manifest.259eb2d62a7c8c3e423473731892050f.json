@@ -1,0 +1,10 @@
+{
+  "name": "Gleetchy",
+  "orientation": "portrait",
+  "display": "browser",
+  "start_url": "/",
+  "publicPath": null,
+  "short_name": "Gleetchy",
+  "theme_color": "#fff",
+  "background_color": "#fff"
+}
