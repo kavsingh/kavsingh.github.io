@@ -1,7 +1,7 @@
 {
   "name": "Gleetchy",
   "orientation": "portrait",
-  "display": "browser",
+  "display": "fullscreen",
   "start_url": "/",
   "publicPath": null,
   "short_name": "Gleetchy",
