@@ -27,9 +27,9 @@ const copyProject = async ({ src, dest }) => {
 }
     
 
-module.exports = async toSync => {
-    await Promise.all(toSync.map(cleanProjectDir))
-    await Promise.all(toSync.map(copyProject))
+module.exports = async projects => {
+    await Promise.all(projects.map(cleanProjectDir))
+    await Promise.all(projects.map(copyProject))
 
-    return toSync.map(({ name }) => name)
+    return projects.map(({ name }) => name)
 }

@@ -1,9 +1,5 @@
-const path = require('path')
-const { promisify } = require('util')
-const writeFile = promisify(require('fs').writeFile)
-const { PROJECT_ROOT } = require('../lib/constants')
 const syncProjects = require('../lib/syncProjects')
-const indexTemplate = require('../lib/indexTemplate')
+const updateIndex = require('../lib/updateIndex')
 const projects = require('../../projects')
 
 const args = process.argv.slice(2)
@@ -24,21 +20,7 @@ const requestedProjects = projects.filter(
 )
 
 syncProjects(requestedProjects)
-    .then(names => {
-        console.log(`Projects synced: ${names.join(', ')}`)
-
-        const listProjects = projects
-            .filter(({ list }) => !!list)
-            .map(({ name, dest, description }) => ({
-                name,
-                description,
-                url: `/${path.relative(PROJECT_ROOT, dest)}`,
-            }))
-        
-        return writeFile(
-            path.resolve(PROJECT_ROOT, 'index.html'),
-            indexTemplate({ projects: listProjects }),
-            'utf-8',
-        )
-    })
+    .then(names => console.log(`Projects synced: ${names.join(', ')}`))
+    .then(() => updateIndex(projects))
+    .then(() => console.log('index.html updated'))
     .catch(error => console.error(error))
