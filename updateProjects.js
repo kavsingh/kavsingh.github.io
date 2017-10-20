@@ -17,14 +17,25 @@ const cleanProjectDir = ({ dest }) => {
         )
     }
     
-    return spawnAsync('rm', ['-r', dest])
+    return spawnAsync('rm', ['-rf', dest])
 }
 
-const copyProjectDir = ({ src, dest }) => spawnAsync('cp', ['-r', src, dest])
+const copyProject = async ({ src, dest }) => {
+    // Assume we have a self contained dist folder
+    if (!Array.isArray(src)) return spawnAsync('cp', ['-r', src, dest])
+
+    // Assume files need to be gathered into folder
+    await spawnAsync('mkdir', ['-p', dest])
+
+    return Promise.all(
+        src.map(filePath => spawnAsync('cp', ['-r', filePath, dest])),
+    )
+}
+    
 
 const syncProjects = async toSync => {
     await Promise.all(toSync.map(cleanProjectDir))
-    await Promise.all(toSync.map(copyProjectDir))
+    await Promise.all(toSync.map(copyProject))
 
     return toSync.map(({ name }) => name)
 }
