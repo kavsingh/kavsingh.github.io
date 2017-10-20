@@ -44,7 +44,7 @@
   "name": "Gleetchy",
   "orientation": "portrait",
   "display": "fullscreen",
-  "start_url": "/",
+  "start_url": "",
   "publicPath": null,
   "short_name": "Gleetchy",
   "theme_color": "#000000",

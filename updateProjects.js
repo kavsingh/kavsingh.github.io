@@ -46,5 +46,5 @@ if (unknownProjects.length) {
 }
 
 syncProjects(requestedProjects)
-    .then(names => console.log(`Projects synced: ${names,join(', ')}`))
+    .then(names => console.log(`Projects synced: ${names.join(', ')}`))
     .catch(error => console.error(error))
