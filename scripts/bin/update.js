@@ -10,16 +10,18 @@ const args = process.argv.slice(2)
 
 const getName = ({ name }) => name
 const knownProjectNames = projects.map(getName)
-const requestedProjects = args.length ? args : [...projects]
-const unknownProjects = requestedProjects.filter(
-    ({ name }) => !knownProjectNames.includes(name),
+const requestedProjectNames = args.length ? args : knownProjectNames
+const unknownProjectNames = requestedProjectNames.filter(
+    name => !knownProjectNames.includes(name),
 )
 
-if (unknownProjects.length) {
-    throw new Error(
-        `Unknown projects: ${unknownProjects.map(getName).join(', ')}`,
-    )
+if (unknownProjectNames.length) {
+    throw new Error(`Unknown projects: ${unknownProjectNames.join(', ')}`)
 }
+
+const requestedProjects = projects.filter(
+    ({ name }) => requestedProjectNames.includes(name),
+)
 
 syncProjects(requestedProjects)
     .then(names => {
