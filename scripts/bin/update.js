@@ -25,11 +25,13 @@ syncProjects(requestedProjects)
     .then(names => {
         console.log(`Projects synced: ${names.join(', ')}`)
 
-        const listProjects = projects.map(({ name, dest, description }) => ({
-            name,
-            description,
-            url: `/${path.relative(PROJECT_ROOT, dest)}`,
-        }))
+        const listProjects = projects
+            .filter(({ list }) => !!list)
+            .map(({ name, dest, description }) => ({
+                name,
+                description,
+                url: `/${path.relative(PROJECT_ROOT, dest)}`,
+            }))
         
         return writeFile(
             path.resolve(PROJECT_ROOT, 'index.html'),
