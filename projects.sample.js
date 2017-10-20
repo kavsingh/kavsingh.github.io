@@ -5,18 +5,22 @@ module.exports = [
     {
         name: 'project with self contained dist folder',
         description: 'brief thing',
-        list: true, // show on page?
-        src: fromRoot('../relative/path/to/project/dist/files'),
+        root: fromRoot('../relative/path/to/project'),
+        preCopyCmd: 'cmd to run e.g. npm build',
+        copy: 'dist/folder/relative/to/project/root',
         dest: fromRoot('relative/path/to/subfolder'),
+        list: true, // show on page?
     },
     {
         name: 'project with files that need to be gathered into a folder',
         description: 'brief thing',
-        list: true,
+        root: fromRoot('../relative/path/to/project'),
+        preCopyCmd: 'cmd to run e.g. npm build',
         src: [
-            fromRoot('../relative/path/to/project/dist/dir'),
-            fromRoot('../relative/path/to/project/file.ext'),
+            'dist/folder/relative/to/project/root',
+            'file/path/relative/to/project/root',
         ], 
         dest: fromRoot('relative/path/to/subfolder'),
+        list: true,
     },
 ]
