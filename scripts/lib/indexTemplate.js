@@ -1,4 +1,4 @@
-
+module.exports = ({ projects = [] }) => `
 <!doctype html>
 <html>
 <head>
@@ -39,9 +39,11 @@
 <body>
     Hello there, here are some things:
     <ul>
-      <li><a href=/gleetchy>gleetchy: audio loopers, playing with the  web audio api + react / redux</a></li>
-<li><a href=/aut>aut: simple cellular automaton thing</a></li>
+      ${projects.map(
+        ({ name, url, description }) => `<li><a href=${url}>${name}: ${description}</a></li>`
+      ).join('\n')}
     </li>
 </body>
 </html>
 
+`
