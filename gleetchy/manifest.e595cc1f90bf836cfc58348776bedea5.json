@@ -42,11 +42,10 @@
     }
   ],
   "name": "Gleetchy",
+  "short_name": "Gleetchy",
   "orientation": "portrait",
   "display": "fullscreen",
   "start_url": "",
-  "publicPath": null,
-  "short_name": "Gleetchy",
-  "theme_color": "#000000",
-  "background_color": "#000000"
+  "theme_color": "#101010",
+  "background_color": "#101010"
 }
