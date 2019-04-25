@@ -45,7 +45,7 @@
   "short_name": "Gleetchy",
   "orientation": "portrait",
   "display": "fullscreen",
-  "start_url": "",
+  "start_url": "/",
   "theme_color": "#101010",
   "background_color": "#101010"
 }

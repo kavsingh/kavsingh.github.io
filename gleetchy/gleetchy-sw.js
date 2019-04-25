@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.0/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.320a72ac67cecce991ae26646ddd9d3c.js"
+  "precache-manifest.46c9cc975ed48ee466bd92e9b39e5382.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "gleetchy-sw"});
