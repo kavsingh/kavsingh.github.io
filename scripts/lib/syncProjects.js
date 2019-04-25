@@ -14,12 +14,12 @@ const cleanProjectDir = ({ dest }) => {
     return spawnAsync('rm', ['-rf', dest])
 }
 
-const preCopyProject = async ({ root: projectRoot, preCopyCmd }) => {
+const preCopyProject = async ({ root: projectRoot, preCopyCmd, env }) => {
     if (!preCopyCmd) return
 
     const [cmd, ...args] = preCopyCmd.split(' ')
 
-    return spawnAsync(cmd, args, { cwd: projectRoot })
+    return spawnAsync(cmd, args, { cwd: projectRoot, ...(env ? { env } : {}) })
 }
 
 const copyProject = async ({ root: projectRoot, copy, dest }) => {

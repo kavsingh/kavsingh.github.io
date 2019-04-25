@@ -33,10 +33,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "icon_96x96.94f15be0af93831be91dacbd6a85e872.png"
   },
   {
-    "revision": "ea3f5e2e3121e7ed6a92853cd987823b",
+    "revision": "449225b92f2e5e4f3d1d4ebbcb753e48",
     "url": "index.html"
   },
   {
-    "url": "manifest.d80440a9ab70bf0cbab66c19be9ad001.json"
+    "url": "manifest.497f572ab4e4002b675c2a99608ecf6c.json"
   }
 ]);
