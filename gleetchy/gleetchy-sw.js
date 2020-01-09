@@ -11,10 +11,10 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.0/workbox-sw.js");
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.d09c32dd9675e5ae79f5fa26bb15c330.js"
+  "precache-manifest.2f7cd30c0e1c30a70286051b0c8e5d4c.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "gleetchy-sw"});
