@@ -1,5 +1,5 @@
-const updateIndex = require('../lib/updateIndex')
-const projects = require('../../projects')
+import updateIndex from '../lib/updateIndex.ts'
+import projects from '../../projects.ts'
 
 updateIndex(projects)
     .then(() => console.log('index.html updated'))

@@ -1,1 +1,1 @@
-node scripts/bin/updatePage.js
+deno --allow-env --allow-read --allow-write=. scripts/bin/updatePage.ts

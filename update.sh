@@ -1,1 +1,1 @@
-node scripts/bin/update.js "$@"
+deno --allow-env --allow-read --allow-write=. scripts/bin/update.ts "$@"

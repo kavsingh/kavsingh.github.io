@@ -1,14 +1,19 @@
-const path = require('path')
-const fromRoot = path.resolve.bind(path, __dirname)
+import { resolve, dirname } from 'https://deno.land/std/path/mod.ts'
+import { __ } from 'https://deno.land/x/dirname/mod.ts'
 
-module.exports = [
+import type { Project } from './scripts/lib/types.ts'
+
+const { __filename, __dirname } = __(import.meta)
+const fromRoot = (...paths: string[]) => resolve(__dirname, ...paths)
+
+const projects: Project[] = [
     {
         name: 'project with self contained dist folder',
         description: 'brief thing',
         root: fromRoot('../relative/path/to/project'),
         env: { ENV_VAR: 'value' },
         preCopyCmd: 'cmd to run e.g. npm build',
-        copy: 'dist/folder/relative/to/project/root',
+        artefacts: 'dist/folder/relative/to/project/root',
         dest: fromRoot('relative/path/to/subfolder'),
         list: true, // show on page?
     },
@@ -18,11 +23,13 @@ module.exports = [
         root: fromRoot('../relative/path/to/project'),
         env: { ENV_VAR: 'value' },
         preCopyCmd: 'cmd to run e.g. npm build',
-        src: [
+        artefacts: [
             'dist/folder/relative/to/project/root',
             'file/path/relative/to/project/root',
-        ], 
+        ],
         dest: fromRoot('relative/path/to/subfolder'),
         list: true,
     },
 ]
+
+export default projects

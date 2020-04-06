@@ -1,4 +1,6 @@
-module.exports = ({ projects = [] }) => `
+import type { ListProject } from './types.ts'
+
+export default ({ projects = [] }: { projects: ListProject[] }) => `
 <!doctype html>
 <html>
 <head>
@@ -57,9 +59,12 @@ module.exports = ({ projects = [] }) => `
 <body>
     Hello there, here are some things:
     <ul class="projectList">
-      ${projects.map(
-        ({ name, url, description }) => `<li><a href=${url}>${name}: ${description}</a></li>`
-      ).join('\n')}
+      ${projects
+          .map(
+              ({ name, url, description }) =>
+                  `<li><a href=${url}>${name}: ${description}</a></li>`,
+          )
+          .join('\n')}
       <li>
         <a href="https://github.com/kavsingh">
           Github
