@@ -13,7 +13,7 @@ const projects: Project[] = [
         root: fromRoot('../relative/path/to/project'),
         env: { ENV_VAR: 'value' },
         preCopyCmd: 'cmd to run e.g. npm build',
-        artefacts: 'dist/folder/relative/to/project/root',
+        artefactPaths: 'dist/folder/relative/to/project/root',
         dest: fromRoot('relative/path/to/subfolder'),
         list: true, // show on page?
     },
@@ -23,7 +23,7 @@ const projects: Project[] = [
         root: fromRoot('../relative/path/to/project'),
         env: { ENV_VAR: 'value' },
         preCopyCmd: 'cmd to run e.g. npm build',
-        artefacts: [
+        artefactPaths: [
             'dist/folder/relative/to/project/root',
             'file/path/relative/to/project/root',
         ],

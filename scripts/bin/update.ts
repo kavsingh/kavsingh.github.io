@@ -1,12 +1,12 @@
-import { process } from 'https://deno.land/std/node/module.ts'
-
 import syncProjects from '../lib/syncProjects.ts'
 import updateIndex from '../lib/updateIndex.ts'
 import projects from '../../projects.ts'
 
 import type { Project } from '../lib/types.ts'
 
-const args = process.argv.slice(2)
+const { args } = Deno
+
+console.log(args)
 
 const getName = ({ name }: Project) => name
 const knownProjectNames = projects.map(getName)

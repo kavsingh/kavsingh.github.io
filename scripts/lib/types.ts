@@ -12,7 +12,7 @@ export interface Project {
      * If a single path, assumes a single dist folder which will be flat copied into dest
      * If multiple paths, all artefacts will be gathered into dest
      */
-    artefacts: string | string[]
+    artefactPaths: string | string[]
     dest: string
     list: true
 }
