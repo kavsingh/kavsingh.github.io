@@ -6,8 +6,6 @@ import type { Project } from '../lib/types.ts'
 
 const { args } = Deno
 
-console.log(args)
-
 const getName = ({ name }: Project) => name
 const knownProjectNames = projects.map(getName)
 const requestedProjectNames: string[] = args.length ? args : knownProjectNames
