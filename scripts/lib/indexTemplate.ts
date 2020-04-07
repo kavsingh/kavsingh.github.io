@@ -1,6 +1,7 @@
-import type { ListProject } from './types.ts'
+import type { ListProject } from "./types.ts";
 
-export default ({ projects = [] }: { projects: ListProject[] }) => `
+export default ({ projects = [] }: { projects: ListProject[] }) =>
+  `
 <!doctype html>
 <html>
 <head>
@@ -60,11 +61,11 @@ export default ({ projects = [] }: { projects: ListProject[] }) => `
     Hello there, here are some things:
     <ul class="projectList">
       ${projects
-          .map(
-              ({ name, url, description }) =>
-                  `<li><a href=${url}>${name}: ${description}</a></li>`,
-          )
-          .join('\n')}
+    .map(
+      ({ name, url, description }) =>
+        `<li><a href=${url}>${name}: ${description}</a></li>`,
+    )
+    .join("\n")}
       <li>
         <a href="https://github.com/kavsingh">
           Github
@@ -79,4 +80,4 @@ export default ({ projects = [] }: { projects: ListProject[] }) => `
 </body>
 </html>
 
-`
+`;
