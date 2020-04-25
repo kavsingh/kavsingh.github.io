@@ -30,7 +30,7 @@ const preCopyProject = ({
       cwd: projectRoot,
       env,
     }).status()
-    : Promise.resolve({ success: true });
+    : Promise.resolve({ success: true, code: 0 });
 
 const copyProject = async ({
   root: projectRoot,
