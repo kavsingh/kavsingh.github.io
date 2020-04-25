@@ -1,0 +1,7 @@
+#!/bin/bash
+
+reloadFlag=$([ "$RELOAD" == "true" ] && echo "--reload" || echo "")
+cmd="deno $reloadFlag --allow-env --allow-read --allow-write=. scripts/bin/updatePage.ts"
+
+echo $cmd
+$cmd
