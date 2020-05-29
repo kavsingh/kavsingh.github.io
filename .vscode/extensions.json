@@ -1,6 +1,6 @@
 {
     "recommendations": [
         "tobermory.es6-string-html",
-        "axetroy.vscode-deno"
+        "denoland.vscode-deno"
     ]
 }
