@@ -1,8 +1,8 @@
-import syncProjects from "../lib/syncProjects.ts";
-import updateIndex from "../lib/updateIndex.ts";
-import projects from "../../projects.ts";
+import projects from "../projects.ts";
+import syncProjects from "./lib/syncProjects.ts";
+import updateIndex from "./lib/updateIndex.ts";
 
-import type { Project } from "../lib/types.ts";
+import type { Project } from "./lib/types.ts";
 
 const { args } = Deno;
 
