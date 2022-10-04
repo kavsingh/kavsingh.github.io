@@ -1,7 +1,0 @@
-#!/bin/bash
-
-reloadFlag=$([ "$RELOAD" == "true" ] && echo "--reload" || echo "")
-cmd="deno run $reloadFlag --unstable --allow-env --allow-read --allow-write=. scripts/bin/updatePage.ts"
-
-echo $cmd
-$cmd
